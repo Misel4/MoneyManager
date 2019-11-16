@@ -1,0 +1,2 @@
+# MoneyManager
+Control your financials
