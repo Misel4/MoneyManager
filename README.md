@@ -1,5 +1,5 @@
 # MoneyManager
-
+-**Control your financials**
 
 -**Manage your earnings**
 
