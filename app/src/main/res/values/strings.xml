@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MoneyManager</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string-array name="Categories">
+        <item>Salary</item>
+        <item>Shares</item>
+        <item>Bonus</item>
+        <item>Investment</item>
+    </string-array>
+</resources>
