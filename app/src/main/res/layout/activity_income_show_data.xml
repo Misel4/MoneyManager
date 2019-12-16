@@ -5,16 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IncomeShowDataActivity">
+    tools:context=".IncomeShowDataActivity"
+    android:background="#8fb5b3">
     <RelativeLayout
-     android:background="#8fb5b3"
      android:layout_width="match_parent"
-     android:layout_height="80dp">
+     android:layout_height="match_parent">
 
      <TextView
          android:id="@+id/display"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
          android:layout_centerVertical="true"
          android:layout_margin="30dp"
          android:layout_centerHorizontal="true"

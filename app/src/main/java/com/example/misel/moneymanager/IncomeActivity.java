@@ -58,9 +58,9 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
             public void onClick(View v) {
                 boolean isInserted = myDb.insertData(editAmount.getText().toString(),textView.getText().toString(),categoryText.getText().toString());
                 if(isInserted = true)
-                    Toast.makeText(IncomeActivity.this,"Data inserted",Toast.LENGTH_LONG).show();
+                    Toast.makeText(IncomeActivity.this,"Transaction Completed",Toast.LENGTH_LONG).show();
                 else
-                    Toast.makeText(IncomeActivity.this,"Data not inserted",Toast.LENGTH_LONG).show();
+                    Toast.makeText(IncomeActivity.this,"Transaction Failed",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -88,7 +88,7 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         categoryText.setText(text);
-        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

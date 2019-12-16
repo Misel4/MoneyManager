@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".InfoActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,11 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IncomeActivity"
-            android:label="@string/income_name"/>
+        <activity
+            android:name=".IncomeActivity"
+            android:label="@string/income_name" />
         <activity android:name=".CalendarActivity" />
-        <activity android:name=".IncomeShowDataActivity"
-            android:label="@string/income_show"/>
+        <activity
+            android:name=".IncomeShowDataActivity"
+            android:label="@string/income_show" />
     </application>
 
 </manifest>

@@ -3,7 +3,7 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="income_name">IncomePlanner</string>
-    <string name="income_show">Incomes</string>
+    <string name="income_show">Income History</string>
     <string-array name="Categories">
         <item>Salary</item>
         <item>Shares</item>
