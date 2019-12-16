@@ -24,12 +24,9 @@ public class IncomeShowDataActivity extends AppCompatActivity {
         display = findViewById(R.id.display);
 
         ViewData();
-
     }
 
-
     public void ViewData(){
-
         Cursor res = myDb.getAllData();
 
         if(res.getCount() == 0){
@@ -40,14 +37,11 @@ public class IncomeShowDataActivity extends AppCompatActivity {
         StringBuffer buffer = new StringBuffer();
 
             while(res.moveToNext()){
-                buffer.append("Amount:" +res.getString(2)+"\n");
+                buffer.append("Amount:" +res.getString(2)+"€"+"\n");
                 buffer.append("Date:" +res.getString(1)+"\n");
                 buffer.append("Category:" +res.getString(3)+ "\n"+"\n");
-
-
         }
         display.setText(buffer);
-
     }
 
     public void ShowMessage(String title, String message){
@@ -55,7 +49,5 @@ public class IncomeShowDataActivity extends AppCompatActivity {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.show();
-
     }
-
 }

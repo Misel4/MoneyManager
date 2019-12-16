@@ -24,7 +24,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:singleLine="true"
-        android:imeOptions="actionNext"
+        android:imeOptions="actionDone"
+        android:cursorVisible="true"
         android:hint="€" />
 
     <TextView
