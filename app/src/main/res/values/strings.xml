@@ -8,4 +8,14 @@
         <item>Bonus</item>
         <item>Investment</item>
     </string-array>
+    <string-array name="Spending_Categories">
+        <item>Shares</item>
+        <item>Investment</item>
+        <item>Casino</item>
+        <item>Super Market</item>
+        <item>Car</item>
+        <item>Cigarettes</item>
+        <item>Entertainment</item>
+        <item>Shopping Therapy</item>
+    </string-array>
 </resources>

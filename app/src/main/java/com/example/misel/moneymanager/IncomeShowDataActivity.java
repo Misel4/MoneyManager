@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class IncomeShowDataActivity extends AppCompatActivity {
     DatabaseHelper myDb;
-    TextView display;
+    TextView display,displayExp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,6 @@ public class IncomeShowDataActivity extends AppCompatActivity {
         display = findViewById(R.id.display);
 
         ViewData();
-
     }
 
 
@@ -43,8 +42,6 @@ public class IncomeShowDataActivity extends AppCompatActivity {
                 buffer.append("Amount:" +res.getString(2)+"\n");
                 buffer.append("Date:" +res.getString(1)+"\n");
                 buffer.append("Category:" +res.getString(3)+ "\n"+"\n");
-
-
         }
         display.setText(buffer);
 

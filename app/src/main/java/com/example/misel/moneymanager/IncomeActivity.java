@@ -22,7 +22,7 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_income);
+       setContentView(R.layout.activity_income);
         myDb = new DatabaseHelper(this);
 
         textView = findViewById(R.id.date);

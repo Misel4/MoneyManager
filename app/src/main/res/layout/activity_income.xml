@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical">
-
     <TextView
-        android:id="@+id/amount"
-        android:gravity="center"
+        android:id="@+id/txt_welcome"
+        android:textSize="22sp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="20dp"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:text="Amount( € ):" />
+        android:gravity="center"
+        android:text="Input your values" />
+
+
+<android.support.design.widget.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <EditText
         android:id="@+id/txt_amount"
@@ -23,10 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
         android:singleLine="true"
-        android:imeOptions="actionNext"
-        android:hint="€" />
+        android:hint="€ Insert you amount here" />
 
+</android.support.design.widget.TextInputLayout>
     <TextView
         android:id="@+id/date"
         android:textSize="22sp"
@@ -53,6 +59,7 @@
         android:paddingLeft="0dp"
         android:visibility="invisible"
         android:text="Category:" />
+
     <TextView
         android:id="@+id/cat"
         android:layout_width="match_parent"
@@ -69,30 +76,23 @@
         android:id="@+id/spinner_category"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal" />
 
 
-    <LinearLayout
+    <Button
+        android:id="@+id/but_addData"
         android:layout_width="fill_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:gravity="center|bottom"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="add data" />
 
-        <Button
-            android:id="@+id/but_addData"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="add data" />
+    <Button
+        android:id="@+id/but_viewIncome"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="View all" />
 
-        <Button
-            android:id="@+id/but_viewIncome"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:text="View all" />
-    </LinearLayout>
 
 </LinearLayout>
 
