@@ -12,6 +12,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class IncomeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     DatabaseHelper myDb;
     EditText editAmount;
@@ -24,7 +27,6 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_income);
         myDb = new DatabaseHelper(this);
-
         textView = findViewById(R.id.date);
         btnDate = findViewById(R.id.but_date);
         editAmount = findViewById(R.id.txt_amount);
@@ -38,9 +40,35 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
         catSpinner.setAdapter(adapter);
         catSpinner.setOnItemSelectedListener(this);
 
+        btnShowData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(IncomeActivity.this,IncomeShowDataActivity.class);
+                startActivity(intent);
+            }
+        });
+
         AddData();
+        GetDate();
 
+    }
+    public void AddData() {
+        btnAddData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isInserted = myDb.insertData(editAmount.getText().toString(),textView.getText().toString(),categoryText.getText().toString());
+                if(isInserted = true)
+                    Toast.makeText(IncomeActivity.this,"Transaction Completed",Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(IncomeActivity.this,"Transaction Failed",Toast.LENGTH_LONG).show();
+            }
+        });
 
+    }
+    public void GetDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String dates = sdf.format(new Date());
+        textView.setText(dates);
 
         String date = getIntent().getStringExtra("date");
         if(date!= null)
@@ -54,43 +82,18 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
             }
         });
 
-        btnShowData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(IncomeActivity.this,IncomeShowDataActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
-    public void AddData() {
-        btnAddData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean isInserted = myDb.insertData(editAmount.getText().toString(),textView.getText().toString(),categoryText.getText().toString());
-                if(isInserted = true)
-                    Toast.makeText(IncomeActivity.this,"Data inserted",Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(IncomeActivity.this,"Data not inserted",Toast.LENGTH_LONG).show();
-
-            }
-        });
-
-    }
-
-
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         categoryText.setText(text);
-        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
 
 }

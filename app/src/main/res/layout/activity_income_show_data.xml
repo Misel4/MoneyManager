@@ -5,18 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IncomeShowDataActivity">
+    tools:context=".IncomeShowDataActivity"
+    android:background="#B9E4C9">
+    <RelativeLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
 
-
-    <TextView
-        android:id="@+id/display"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_margin="10dp"
-        />
-
-
+     <TextView
+         android:id="@+id/display"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_centerVertical="true"
+         android:layout_margin="30dp"
+         android:layout_centerHorizontal="true"
+         android:text="TextView"
+         android:textSize="18sp"
+         android:textColor="#111112"
+         android:textStyle="bold" />
+ </RelativeLayout>
 </ScrollView>

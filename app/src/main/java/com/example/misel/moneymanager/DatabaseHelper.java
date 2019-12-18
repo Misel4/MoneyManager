@@ -26,9 +26,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null,1);
 
     }
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-    String dates = sdf.format(new Date());
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(" create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT,DATES DATE,AMOUNT INTEGER,CATEGORY VARCHAR)"  );
@@ -73,6 +70,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * FROM " + TABLE_NAME ,null);
         return res;
+    }
+
+    public Cursor getExpenditure(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor result = db.rawQuery("select * from " + TABLE2_NAME,null);
+        return result;
     }
 
 }

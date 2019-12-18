@@ -2,6 +2,10 @@
     <string name="app_name">MoneyManager</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="income_name">Income Planner</string>
+    <string name="income_show">Income History</string>
+    <string name="exp_name">Expenditure</string>
+    <string name="exp_show">Expenditure History</string>
     <string-array name="Categories">
         <item>Salary</item>
         <item>Shares</item>
@@ -9,13 +13,12 @@
         <item>Investment</item>
     </string-array>
     <string-array name="Spending_Categories">
-        <item>Shares</item>
-        <item>Investment</item>
         <item>Casino</item>
         <item>Super Market</item>
         <item>Car</item>
         <item>Cigarettes</item>
         <item>Entertainment</item>
         <item>Shopping Therapy</item>
+        <item>Investment</item>
     </string-array>
 </resources>

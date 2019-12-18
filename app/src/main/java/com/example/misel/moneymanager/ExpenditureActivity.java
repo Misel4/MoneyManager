@@ -12,6 +12,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ExpenditureActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     DatabaseHelper myDb;
     EditText editAmount;
@@ -38,27 +41,18 @@ public class ExpenditureActivity extends AppCompatActivity implements AdapterVie
         catSpinner.setOnItemSelectedListener(this);
 
 
-        String date = getIntent().getStringExtra("date");
-        if(date!= null)
-            dateText.setText(date);
 
-        btnDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ExpenditureActivity.this,CalendarActivity.class);
-                startActivity(intent);
-            }
-        });
 
         btnShowData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ExpenditureActivity.this,IncomeShowDataActivity.class);
+                Intent intent = new Intent(ExpenditureActivity.this,ShowExpenditureActivity.class);
                 startActivity(intent);
             }
         });
 
         AddSpending();
+        GetDate();
     }
     public void AddSpending(){
         btnAddData.setOnClickListener(new View.OnClickListener() {
@@ -74,11 +68,30 @@ public class ExpenditureActivity extends AppCompatActivity implements AdapterVie
 
     }
 
+    public void GetDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String dates = sdf.format(new Date());
+        dateText.setText(dates);
+
+        String date = getIntent().getStringExtra("date");
+        if(date!= null)
+            dateText.setText(date);
+
+        btnDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ExpenditureActivity.this,CalendarExpenditureActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
         CategoryText.setText(text);
-        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

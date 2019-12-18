@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ExpenditureActivity"></activity>
+
+
+        <activity android:name=".CalendarExpenditureActivity" />
+        <activity android:name=".ShowExpenditureActivity"
+            android:label="@string/exp_show"/>
+        <activity android:name=".InfoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,9 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IncomeActivity" />
+        <activity
+            android:name=".IncomeActivity"
+            android:label="@string/income_name" />
         <activity android:name=".CalendarActivity" />
-        <activity android:name=".IncomeShowDataActivity" />
+        <activity
+            android:name=".IncomeShowDataActivity"
+            android:label="@string/income_show" />
+        <activity android:name=".ExpenditureActivity"
+            android:label="@string/exp_name"/>
     </application>
 
 </manifest>
