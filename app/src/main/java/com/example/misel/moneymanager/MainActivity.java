@@ -13,11 +13,13 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout myDrawerLayout;
     private ActionBarDrawerToggle myToggle;
+    DatabaseHelper myDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myDb = new DatabaseHelper(this);
         myDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         myToggle = new ActionBarDrawerToggle(this,myDrawerLayout,R.string.open,R.string.close);
         myDrawerLayout.addDrawerListener(myToggle);
@@ -42,6 +44,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_income:{
                 Intent intent = new Intent(MainActivity.this,IncomeActivity.class);
                 startActivity(intent);
+                break;
+            }
+            case R.id.nav_outgoing:{
+                Intent outintent = new Intent(MainActivity.this,ExpenditureActivity.class);
+                startActivity(outintent);
+                break;
             }
         }
         myDrawerLayout.closeDrawer(GravityCompat.START);
