@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:background="#B9E4C9"
+    android:background="#07040B"
     android:orientation="vertical">
 
     <TextView
@@ -16,7 +16,7 @@
         android:layout_marginBottom="20dp"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#14130f"
+        android:textColor="#C1D0D4"
         android:text="Insert Your Income Values" />
 
     <android.support.design.widget.TextInputLayout
@@ -25,11 +25,12 @@
     <EditText
         android:id="@+id/txt_amount"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:singleLine="true"
         android:imeOptions="actionDone"
+        android:background="@drawable/edit_text"
         android:hint="€ Insert your amount here" />
     </android.support.design.widget.TextInputLayout>
 
@@ -49,7 +50,7 @@
             android:layout_weight="0.5"
             android:gravity="center"
             android:text="Date:"
-            android:textColor="#14130f"
+            android:textColor="#C1D0D4"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -63,13 +64,14 @@
             android:drawableLeft="@drawable/calendar"
             android:background="@drawable/button_corner"
             android:text="Select Date"
+            android:textColor="#C1D0D4"
             android:textAllCaps="false" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="114dp"
+        android:layout_height="105dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/roundcorner"
         android:orientation="horizontal">
@@ -84,15 +86,16 @@
             android:layout_weight="0.4"
             android:gravity="center"
             android:text="Category:"
-            android:textColor="#14130f"
+            android:textColor="#C1D0D4"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinner_category"
-            android:layout_width="200dp"
+            android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="40dp"
+            android:background="#C1D0D4"
             android:layout_marginRight="30dp" />
 
     </LinearLayout>
@@ -106,28 +109,32 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+
         <Button
             android:id="@+id/but_addData"
             android:textAllCaps="false"
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="45dp"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="200dp"
             android:layout_marginRight="5dp"
-            android:background="#FFFBE6"
-            android:text="New transaction" />
+            android:background="@drawable/button_corner"
+            android:text="New transaction"
+            android:textColor="#C1D0D4"/>
 
         <Button
             android:id="@+id/but_viewIncome"
             android:textAllCaps="false"
             android:drawableLeft="@drawable/history"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="200dp"
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="45dp"
-            android:background="#FFFBE6"
+            android:background="@drawable/button_corner"
+            android:textColor="#C1D0D4"
             android:text="View History" />
         </LinearLayout>
+
     </RelativeLayout>
   <TextView android:id="@+id/category"
      android:layout_width="92dp"

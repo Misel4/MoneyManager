@@ -1,6 +1,7 @@
 package com.example.misel.moneymanager;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,7 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
         categoryText = findViewById(R.id.category);
         catSpinner = findViewById(R.id.spinner_category);
 
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Categories, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         catSpinner.setAdapter(adapter);
@@ -48,8 +50,11 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
             }
         });
 
+
+
         AddData();
         GetDate();
+        //Balance();
 
     }
     public void AddData() {
@@ -83,6 +88,8 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
         });
 
     }
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

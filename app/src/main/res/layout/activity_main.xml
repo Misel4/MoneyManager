@@ -6,21 +6,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer"
+    android:background="#07040B"
     tools:context=".MainActivity">
-
-
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:src="@drawable/ma" />
-
-        </FrameLayout>
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:text="Total Balance"
+      android:textColor="#C1D0D4"
+      android:layout_marginTop="40dp"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="40dp"
+      android:textSize="50sp"/>
+    <TextView
+        android:id="@+id/balance_txt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/balance_txt_circle"
+        android:gravity="center"
+        android:textColor="#C1D0D4"
+        android:textSize="50sp" />
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -29,5 +37,6 @@
         android:layout_gravity ="start">
 
     </android.support.design.widget.NavigationView>
+
 
 </android.support.v4.widget.DrawerLayout>

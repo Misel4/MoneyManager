@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".IncomeShowDataActivity"
-    android:background="#B9E4C9">
+    android:background="#07040B">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,7 +20,7 @@
             android:layout_centerHorizontal="true"
             android:text="TextView"
             android:textSize="18sp"
-            android:textColor="#111112"
+            android:textColor="#C1D0D4"
             android:textStyle="bold" />
     </RelativeLayout>
 </ScrollView>

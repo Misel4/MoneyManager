@@ -6,9 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "money.db";
     public static final String TABLE_NAME = "income_table";
@@ -76,6 +73,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor result = db.rawQuery("select * from " + TABLE2_NAME,null);
         return result;
+    }
+    public int getIncomeBalance() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT SUM(" + COL_3 + ") FROM " + TABLE_NAME, null);
+        if (data.moveToFirst()) {
+            return data.getInt(0);
+        }
+        return 0;
+    }
+
+    public int getExpBalance(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT SUM(" + S_COL_3 + ") FROM " + TABLE2_NAME, null);
+        if (data.moveToFirst()) {
+            return data.getInt(0);
+        }
+        return 0;
+    }
+
+    public int getTotalBalance(){
+        int income = getIncomeBalance();
+        int expenditure = getExpBalance();
+        return  income-expenditure;
     }
 
 }
