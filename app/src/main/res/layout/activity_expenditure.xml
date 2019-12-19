@@ -34,7 +34,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="67dp"
         android:background="@drawable/roundcorner"
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
@@ -42,10 +42,12 @@
         android:id="@+id/spend_date"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
         android:layout_weight="0.5"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:text="Date:"
         android:textColor="#C1D0D4"
         android:textSize="20sp"
@@ -55,7 +57,7 @@
         android:id="@+id/but_spend_date"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_weight="0.5"
         android:drawableLeft="@drawable/calendar"
@@ -67,7 +69,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="114dp"
+        android:layout_height="67dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/roundcorner"
         android:orientation="horizontal">
@@ -75,10 +77,11 @@
         android:id="@+id/spend_cat"
         android:layout_width="0dp"
         android:layout_height="45sp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="22dp"
+        android:layout_marginLeft="15dp"
         android:layout_weight="0.4"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:text="Category:"
         android:textColor="#C1D0D4"
         android:textSize="20sp"
@@ -88,7 +91,7 @@
         android:id="@+id/spinner_spend_category"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="15dp"
         android:background="#C1D0D4"
         android:layout_marginRight="30dp"/>
     </LinearLayout>
@@ -107,7 +110,7 @@
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="45dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="300dp"
             android:layout_marginRight="5dp"
             android:background="@drawable/button_corner"
             android:textColor="#C1D0D4"
@@ -117,7 +120,7 @@
             android:id="@+id/but_viewExpenditure"
             android:textAllCaps="false"
             android:drawableLeft="@drawable/history"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="300dp"
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="45dp"
