@@ -9,13 +9,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout myDrawerLayout;
     private ActionBarDrawerToggle myToggle;
     DatabaseHelper myDb;
-    TextView balanceTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         myToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         SetNavigationViewListener();
-        balanceTxt = findViewById(R.id.balance_txt);
-
-        Balance();
 
     }
 
@@ -62,16 +60,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(outintent);
                 break;
             }
+            case R.id.nav_diagrams: {
+                Intent graphIntent = new Intent(MainActivity.this, DiagramsActivity.class);
+                startActivity(graphIntent);
+                break;
+            }
         }
         myDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
-    }
-    public void Balance(){
-        int data = myDb.getTotalBalance();
-        StringBuffer buffer = new StringBuffer();
-        buffer.append( +data +"€");
-        balanceTxt.setText(buffer);
-
     }
 
     public void SetNavigationViewListener(){

@@ -28,8 +28,5 @@ public class InfoActivity extends AppCompatActivity {
             // e.printStackTrace();
             result = "Error: can't show file.";
         }
-
-
-
     }
 }

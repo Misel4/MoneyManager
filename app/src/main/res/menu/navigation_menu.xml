@@ -2,20 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   <item android:id="@+id/nav_income"
       android:icon="@drawable/income_menu"
-      android:title="Incomes"/>
+      android:title="Εσοδα"/>
 
     <item android:id="@+id/nav_outgoing"
         android:icon="@drawable/expenditure_menu"
-        android:title="Expenditure"/>
+        android:title="Εξοδα"/>
 
-    <item android:id="@+id/nav_save"
-        android:icon="@drawable/save_money_menu"
-        android:title="Save Money"/>
+    <item android:id="@+id/nav_diagrams"
+      android:icon="@drawable/expenditure_menu"
+      android:title="Διαγράμματα"/>
 
     <item android:id="@+id/nav_info"
         android:icon="@drawable/info"
         android:title="App Info"/>
-
-
 
 </menu>

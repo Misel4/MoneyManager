@@ -8,27 +8,39 @@
     android:id="@+id/drawer"
     android:background="#07040B"
     tools:context=".MainActivity">
-  <TextView
-      android:layout_width="match_parent"
-      android:layout_height="50dp"
-      android:text="Total Balance"
-      android:textColor="#C1D0D4"
-      android:layout_marginTop="40dp"
-      android:layout_marginLeft="30dp"
-      android:layout_marginRight="40dp"
-      android:textSize="50sp"/>
-    <TextView
-        android:id="@+id/balance_txt"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginBottom="200dp"
-        android:background="@drawable/balance_txt_circle"
-        android:gravity="center"
-        android:textColor="#C1D0D4"
-        android:textSize="50sp" />
+        android:layout_height="match_parent">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="top"
+      android:orientation="vertical">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/balance_fragment"
+        android:name="com.example.misel.moneymanager.fragments.MainBalanceFragment"/>
+
+     <fragment
+         android:layout_width="match_parent"
+         android:layout_height="250dp"
+         android:id="@+id/column_chart_fragment"
+         android:name="com.example.misel.moneymanager.fragments.MainChartFragment"/>
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="5dp"
+          android:background="@android:color/black"/>
+
+      <fragment
+          android:id="@+id/fragment_balance"
+          android:name="com.example.misel.moneymanager.fragments.TotalBalanceChart"
+          android:layout_width="match_parent"
+          android:layout_height="375dp" />
+</LinearLayout>
+    </ScrollView>
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-        <activity android:name=".CalendarExpenditureActivity" />
-        <activity android:name=".ShowExpenditureActivity"
-            android:label="@string/exp_show"/>
+        <activity android:name=".DeleteSpendingActivity"></activity>
+        <activity android:name=".DeleteItemActivity" />
+        <activity android:name=".DiagramsActivity" />
+        <activity
+            android:name=".ShowExpenditureActivity"
+            android:label="@string/exp_show"
+            android:parentActivityName=".ExpenditureActivity" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -24,13 +26,25 @@
         </activity>
         <activity
             android:name=".IncomeActivity"
-            android:label="@string/income_name" />
-        <activity android:name=".CalendarActivity" />
+            android:label="@string/income_name"
+            android:parentActivityName=".MainActivity" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+
         <activity
             android:name=".IncomeShowDataActivity"
-            android:label="@string/income_show" />
-        <activity android:name=".ExpenditureActivity"
-            android:label="@string/exp_name"/>
+            android:label="@string/income_show"
+            android:parentActivityName=".IncomeActivity" />
+        <activity
+            android:name=".ExpenditureActivity"
+            android:label="@string/exp_name"
+            android:parentActivityName=".MainActivity" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
     </application>
 
 </manifest>

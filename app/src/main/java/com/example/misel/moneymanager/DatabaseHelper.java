@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "money.db";
     public static final String TABLE_NAME = "income_table";
@@ -26,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(" create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT,DATES DATE,AMOUNT INTEGER,CATEGORY VARCHAR)"  );
-        db.execSQL(" create table " + TABLE2_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT,DATES DATE,AMOUNT INTEGER,CATEGORY VARCHAR)"  );
+        db.execSQL(" create table " + TABLE2_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT,DATES DATE,AMOUNT INTEGER,CATEGORY VARCHAR)" );
 
     }
 
@@ -37,11 +39,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String amount, String dates, CharSequence text){
+    public boolean insertData(String amount, String date, CharSequence text){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2,dates);
+        contentValues.put(COL_2,date);
         contentValues.put(COL_3,amount);
         contentValues.put(COL_4, (String) text);
         long result = db.insert(TABLE_NAME,null,contentValues);
@@ -96,6 +98,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         int income = getIncomeBalance();
         int expenditure = getExpBalance();
         return  income-expenditure;
+    }
+
+    public Cursor getItemID(String amount){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + COL_1 + " FROM " + TABLE_NAME +
+                " WHERE " + COL_3 + " = '" + amount + "'";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+    public void deleteItem(int id, String amount){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + TABLE_NAME + " WHERE "
+                + COL_1 + " = '" + id + "'" +
+                " AND " + COL_3 + " = '" + amount + "'";
+        db.execSQL(query);
+    }
+
+    public Cursor getItemIDSpending(String amount){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + S_COL_1 + " FROM " + TABLE2_NAME +
+                " WHERE " + S_COL_3 + " = '" + amount + "'";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+    public void deleteItemSpending(int id, String amount){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + TABLE2_NAME + " WHERE "
+                + S_COL_1 + " = '" + id + "'" +
+                " AND " + S_COL_3 + " = '" + amount + "'";
+        db.execSQL(query);
     }
 
 }

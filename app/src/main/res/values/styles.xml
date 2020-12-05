@@ -5,7 +5,10 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+    <style name="DialogTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorAccent">#0000</item>
     </style>
 
 

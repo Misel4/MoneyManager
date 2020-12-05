@@ -1,24 +1,33 @@
 <resources>
-    <string name="app_name">MoneyManager</string>
+    <string name="app_name">Διαχείρηση εσόδων-εξόδων</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="income_name">Income Planner</string>
-    <string name="income_show">Income History</string>
-    <string name="exp_name">Expenditure</string>
-    <string name="exp_show">Expenditure History</string>
+    <string name="income_name">Καταχώρηση εσόδων</string>
+    <string name="income_show">Ιστορικό εσόδων</string>
+    <string name="exp_name">Καταχώρηση εξόδων</string>
+    <string name="exp_show">Ιστορικό εξόδων</string>
     <string-array name="Categories">
-        <item>Salary</item>
-        <item>Shares</item>
-        <item>Bonus</item>
-        <item>Investment</item>
+        <item>Μισθός</item>
+        <item>Μετοχές</item>
+        <item>Μπόνους</item>
+        <item>Επενδύσεις</item>
+        <item>Φιλοδώρημα</item>
+        <item>Φόροι</item>
+        <item>Δάνειο</item>
+        <item>Επίδομα</item>
+        <item>Χαρτζιλίκι</item>
     </string-array>
+
     <string-array name="Spending_Categories">
-        <item>Casino</item>
-        <item>Super Market</item>
-        <item>Car</item>
-        <item>Cigarettes</item>
-        <item>Entertainment</item>
-        <item>Shopping Therapy</item>
-        <item>Investment</item>
+        <item>Καζίνο</item>
+        <item>Σούπερ μάρκετ</item>
+        <item>Αυτοκίνητο</item>
+        <item>Τσιγάρα</item>
+        <item>Διασκέδαση</item>
+        <item>Ενδύματα-Υποδήματα</item>
+        <item>Επένδυσεις</item>
+        <item>Τράπεζα</item>
+        <item>Είδη τεχνολογίας</item>
+        <item>Φαγητό</item>
     </string-array>
 </resources>

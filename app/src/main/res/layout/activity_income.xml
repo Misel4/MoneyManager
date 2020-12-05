@@ -5,7 +5,8 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:background="#07040B"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/incomeActivity">
 
     <TextView
         android:id="@+id/amount"
@@ -16,12 +17,13 @@
         android:layout_marginBottom="20dp"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#C1D0D4"
-        android:text="Insert Your Income Values" />
+        android:textColor="#03DAC6"
+        android:text="Έσοδα" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:textColorHint="#03DAC6">
     <EditText
         android:id="@+id/txt_amount"
         android:layout_width="match_parent"
@@ -31,42 +33,51 @@
         android:singleLine="true"
         android:imeOptions="actionDone"
         android:background="@drawable/edit_text"
-        android:hint="€ Insert your amount here" />
+        android:textColor="#03DAC6"
+        android:hint="€ εισάγεται το ποσό" />
     </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="67dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:background="@drawable/roundcorner"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/date"
-            android:layout_width="0dp"
+            android:layout_width="250dp"
             android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="90dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="30dp"
             android:layout_weight="0.5"
-            android:layout_gravity="center"
-            android:text="Date:"
-            android:textColor="#C1D0D4"
+            android:text="Ημερομηνία:"
+            android:textColor="#03DAC6"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button
+
             android:id="@+id/but_date"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.5"
+            android:layout_width="70dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
             android:background="@drawable/button_corner"
             android:drawableLeft="@drawable/calendar"
-            android:text="Select Date"
+            android:drawablePadding="2dip"
+            android:drawableTint="@color/colorDat"
+            android:paddingLeft="25dip"
+            android:paddingRight="10dip"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
             android:textAllCaps="false"
-            android:textColor="#C1D0D4" />
+            android:textColor="#000000"
+            android:onClick="handleCalendarFragment"/>
 
     </LinearLayout>
 
@@ -74,6 +85,8 @@
         android:layout_width="match_parent"
         android:layout_height="67dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:background="@drawable/roundcorner"
         android:orientation="horizontal">
 
@@ -88,57 +101,80 @@
             android:layout_marginRight="10dp"
             android:layout_weight="0.4"
             android:gravity="center_vertical"
-            android:text="Category:"
-            android:textColor="#C1D0D4"
+            android:text="Κατηγορία:"
+            android:textColor="#03DAC6"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinner_category"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
-            android:background="#C1D0D4" />
+            android:background="#121212" />
 
     </LinearLayout>
+
     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/but_addData"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/button_corner"
+                android:text="Προσθήκη"
+                android:textAllCaps="false"
+                android:textColor="#03DAC6" />
+
+            <Button
+            android:id="@+id/but_viewIncome"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/history"
+            android:drawableTint="@color/colorDat"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="45dp"
+            android:background="@drawable/button_corner"
+            android:textColor="#03DAC6"
+            android:text="Ιστορικό" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-        <LinearLayout
+        <fragment
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:id="@+id/pieText"
+            android:name="com.example.misel.moneymanager.fragments.PieFragment"/>
 
-
-        <Button
-            android:id="@+id/but_addData"
-            android:textAllCaps="false"
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="45dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/button_corner"
-            android:text="New transaction"
-            android:textColor="#C1D0D4"/>
-
-        <Button
-            android:id="@+id/but_viewIncome"
-            android:textAllCaps="false"
-            android:drawableLeft="@drawable/history"
-            android:layout_marginTop="300dp"
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="45dp"
-            android:background="@drawable/button_corner"
-            android:textColor="#C1D0D4"
-            android:text="View History" />
-        </LinearLayout>
-
-    </RelativeLayout>
+    </LinearLayout>
+    </ScrollView>
   <TextView android:id="@+id/category"
      android:layout_width="92dp"
     android:layout_height="wrap_content"
