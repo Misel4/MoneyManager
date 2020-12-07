@@ -65,10 +65,6 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
 
         AddData();
         GetDate();
-        //Balance();
-        PieFragment pieFragment= new PieFragment();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.incomeActivity,pieFragment);
 
     }
 
@@ -95,16 +91,17 @@ public class IncomeActivity extends AppCompatActivity implements AdapterView.OnI
             public void onClick(View v) {
                 Calendar calendar = Calendar.getInstance();
                 int year = calendar.get(Calendar.YEAR);
-                int month = calendar.get(Calendar.MONTH);
+                int month = calendar.get(Calendar.MONTH) ;
                 int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 
                 datePickerDialog = new DatePickerDialog(IncomeActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                                textView.setText(day + "/" + month + "/" + year);
+                                int selectedMonth = month+1;
+                                textView.setText(day + "/" + selectedMonth + "/" + year);
                             }
-                        }, year, month, dayOfMonth);
+                        }, year, month , dayOfMonth);
                 datePickerDialog.show();
             }
         });

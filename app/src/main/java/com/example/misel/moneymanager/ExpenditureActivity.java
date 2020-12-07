@@ -65,10 +65,6 @@ public class ExpenditureActivity extends AppCompatActivity implements AdapterVie
 
         AddSpending();
         GetDate();
-
-        SpendingPieFragment spendingPieFragment= new SpendingPieFragment();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.expenditureActivity,spendingPieFragment);
     }
 
     public void AddSpending(){
@@ -102,7 +98,8 @@ public class ExpenditureActivity extends AppCompatActivity implements AdapterVie
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                                dateText.setText(day + "/" + month + "/" + year);
+                                int selectedMonth = month+1;
+                                dateText.setText(day + "/" + selectedMonth + "/" + year);
                             }
                         }, year, month, dayOfMonth);
                 datePickerDialog.show();
