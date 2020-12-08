@@ -46,18 +46,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId())
         {
             case R.id.nav_income:{
-                Intent intent = new Intent(MainActivity.this,IncomeActivity.class);
-                startActivity(intent);
+                Intent incomeIntent = new Intent(MainActivity.this,IncomeActivity.class);
+                startActivity(incomeIntent);
                 break;
             }
             case R.id.nav_outgoing:{
-                Intent outintent = new Intent(MainActivity.this,ExpenditureActivity.class);
-                startActivity(outintent);
+                Intent outIntent = new Intent(MainActivity.this,ExpenditureActivity.class);
+                startActivity(outIntent);
                 break;
             }
             case R.id.nav_info:{
-                Intent outintent = new Intent(MainActivity.this,InfoActivity.class);
-                startActivity(outintent);
+                Intent infoIntent = new Intent(MainActivity.this,InfoActivity.class);
+                startActivity(infoIntent);
                 break;
             }
             case R.id.nav_diagrams: {

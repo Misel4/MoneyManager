@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#07040B">
+    android:background="#FFFFFF">
 
     <ListView
         android:id="@+id/List1"
@@ -18,7 +18,5 @@
         tools:layout_editor_absoluteX="364dp"
         tools:layout_editor_absoluteY="16dp"
         android:clickable="true">
-
-
     </ListView>
 </LinearLayout>

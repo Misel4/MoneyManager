@@ -59,7 +59,6 @@ public class MainChartFragment extends Fragment {
     public void setupColumnChart() throws ParseException {
         Cartesian cartesian = AnyChart.column();
         Cursor incBalance = myDb.getAllData();
-        Cursor expBalance = myDb.getExpenditure();
 
         if(incBalance.getCount() ==0){
             Toast.makeText(this.getContext(),"Δεν υπαρχουν δεδομένα διαθέσιμα για προβολή",Toast.LENGTH_LONG).show();
@@ -103,15 +102,5 @@ public class MainChartFragment extends Fragment {
         cartesian.yAxis(0).title("Ποσό");
 
         anyChartView.setChart(cartesian);
-
-
-    }
-    private class CustomDataEntry extends ValueDataEntry {
-
-        CustomDataEntry(String x, Double value, Double value2) {
-            super(x, value);
-            setValue("value2", value2);
-        }
-
     }
 }

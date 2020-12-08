@@ -86,8 +86,6 @@ public class IncomeShowDataActivity extends AppCompatActivity {
             return;
         }
 
-        StringBuffer buffer = new StringBuffer();
-
             while (res.moveToNext()) {
                 amount.add(res.getString(2));
                 date.add(res.getString(1));

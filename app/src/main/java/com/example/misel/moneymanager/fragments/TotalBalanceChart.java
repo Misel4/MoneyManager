@@ -130,15 +130,13 @@ public class TotalBalanceChart extends Fragment {
         cartesian.legend().padding(0d, 0d, 10d, 0d);
 
         anyChartView.setChart(cartesian);
-
     }
-    private class CustomDataEntry extends ValueDataEntry {
 
+    private class CustomDataEntry extends ValueDataEntry {
         CustomDataEntry(String x,String x2, Number value, Number value2) {
             super(x, value);
             setValue("value2", value2);
             setValue("x2",x2);
         }
-
     }
 }
